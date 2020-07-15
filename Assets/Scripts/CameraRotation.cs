@@ -3,6 +3,7 @@
 public class CameraRotation : MonoBehaviour
 {
 	private readonly Vector3 _rotationVector = Vector3.up;
+	private readonly float _speed = 0.3f;
 	private Vector3 _prevMousePosition;
 
 	private void Update()
@@ -16,7 +17,7 @@ public class CameraRotation : MonoBehaviour
 		{
 			var mousePosition = Input.mousePosition;
 			var mouseDelta = mousePosition - _prevMousePosition;
-			transform.Rotate(_rotationVector, mouseDelta.x * 0.3f);
+			transform.Rotate(_rotationVector, mouseDelta.x * _speed);
 			_prevMousePosition = mousePosition;
 		}
 	}
